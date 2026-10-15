@@ -1,4 +1,4 @@
-package com.ifpb.igram;
+package com.ifpb.ifgram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

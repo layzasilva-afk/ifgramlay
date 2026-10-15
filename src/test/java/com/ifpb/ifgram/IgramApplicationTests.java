@@ -1,4 +1,4 @@
-package com.ifpb.igram;
+package com.ifpb.ifgram;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
