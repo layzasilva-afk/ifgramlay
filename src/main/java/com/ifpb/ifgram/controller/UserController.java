@@ -1,23 +1,20 @@
 package com.ifpb.ifgram.controller;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.*;
-
-import ifgram.ifpb.service.UserService;
-import ifgram.ifpb.dto.UserRequest;
-import ifgram.ifpb.dto.UserResponse;
+import com.ifpb.ifgram.Service.UserService;
+import com.ifpb.ifgram.dto.UserRequest;
+import com.ifpb.ifgram.dto.UserResponse;
 
     @RestController
     @RequestMapping("user")
     public class UserController {
 
-        public final UserService service;
+        public final com.ifpb.ifgram.controller.UserService service;
 
-        public UserController(UserService service){
+        public UserController(com.ifpb.ifgram.controller.UserService service){
             this.service = service;
         }
-
 
         @GetMapping
         public List<UserResponse> getUsers(){
@@ -37,9 +34,9 @@ import ifgram.ifpb.dto.UserResponse;
         }
 
         @DeleteMapping
-        public String deleteUser(){
-            return "chamei o endpoint como um DELETE!";
-        }
-
+        public String deleteUser(UserRequest request) throws Exception {
+            service.deletarUsuario(request);
+            return "Usuário deletado com sucesso!";
     }
+
 }
